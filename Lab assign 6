@@ -1,0 +1,67 @@
+
+
+
+
+Plugging Devices into Power Outlets
+
+You are developing an application that helps users manage and control various electronic devices by plugging them into power outlets. Each device has different plug types, voltage, and amperage requirements. To ensure compatibility and safety, you need to create adapters for different devices to allow them to be plugged into standard power outlets.
+
+Adaptee Objects:
+
+Laptop - Represents a laptop device that needs to be plugged into a power source. It has the charge() method.
+
+Refrigerator - Represents a refrigerator device that requires a power source. It has the startCooling() method.
+
+SmartphoneCharger - Represents a smartphone charger that needs to be plugged in for charging. It has the chargePhone() method.
+
+Target Object:
+
+PowerOutlet - Represents a standard power outlet with a common interface for plugging in devices. It defines the plugIn() method as the target method.
+
+Adapter Objects:
+
+LaptopAdapter - An adapter for plugging a laptop into a standard power outlet. It adapts the Laptop to the PowerOutlet interface, translating plugIn() to charge().
+
+RefrigeratorAdapter - An adapter for plugging a refrigerator into a standard power outlet. It adapts the Refrigerator to the PowerOutlet interface, translating plugIn() to startCooling().
+
+SmartphoneAdapter - An adapter for plugging a smartphone charger into a standard power outlet. It adapts the SmartphoneCharger to the PowerOutlet interface, translating plugIn() to chargePhone().
+In your solution you must provide the following in your Github link account:
+
+  Problem statement (description of the problem. Just copy what is stated here.
+
+
+
+
+
+
+UML Class Diagram:
+
+plaintext
+Copy code
++-------------------+   +--------------------+   +------------------+
+|  Adaptee Objects |   |  Target Object    |   | Adapter Objects |
+|                   |   |                  |   |                  |
+|    Laptop         |   |   PowerOutlet    |   |  LaptopAdapter   |
+|    - charge()     |   |                  |   |  - plugIn()       |
+|                   |   |  + plugIn()      |   |                  |
+|    Refrigerator   |   |                  |   |  RefrigeratorAdapter |
+|    - startCooling() |  |                 |   |  - plugIn()       |
+|                   |   |                  |   |                  |
+|    SmartphoneCharger | |                 |   |  SmartphoneAdapter |
+|    - chargePhone() | |                 |   |  - plugIn()       |
+
+
+
+
+
+
+In the class diagram:
+
+Laptop, Refrigerator, and SmartphoneCharger are the Adaptee objects. They have specific methods for charging or cooling.
+PowerOutlet is the Target object with the plugIn() method.
+LaptopAdapter, RefrigeratorAdapter, and SmartphoneAdapter are Adapter objects. They adapt the specific Adaptee objects to the PowerOutlet interface by translating their methods into plugIn().
+For the Java code implementation, you would need to create these classes and ensure that the adapters correctly translate the device-specific methods into the common plugIn() method of the PowerOutlet.
+
+
+
+
